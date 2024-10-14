@@ -98,6 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libKPim6AkonadiCalendar.so.*.*
 %ghost %{_libdir}/libKPim6AkonadiCalendar.so.6
 %attr(755,root,root) %{_libdir}/qt6/plugins/akonadi_serializer_kcalcore.so
+%dir %{_libdir}/qt6/plugins/kf6/org.kde.kcalendarcore.calendars
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/org.kde.kcalendarcore.calendars/libakonadicalendarplugin.so
 %{_datadir}/akonadi/plugins/serializer/akonadi_serializer_kcalcore.desktop
 %{_datadir}/dbus-1/services/org.kde.kalendarac.service
