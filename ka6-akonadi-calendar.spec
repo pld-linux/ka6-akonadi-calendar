@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.04.3
+%define		kdeappsver	25.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		akonadi-calendar
 Summary:	Akonadi Calendar
 Name:		ka6-%{kaname}
-Version:	25.04.3
-Release:	2
+Version:	25.08.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	922c36ffafc258b7792d0d0877b95d61
+# Source0-md5:	e4ff19c7c80546d78a02ac1be3230704
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= 5.11.1
@@ -99,6 +99,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kalendarac
 %attr(755,root,root) %{_libdir}/libKPim6AkonadiCalendar.so.*.*
 %ghost %{_libdir}/libKPim6AkonadiCalendar.so.6
+%ghost %{_libdir}/libKPim6AkonadiCalendarCore.so.6
+%attr(755,root,root) %{_libdir}/libKPim6AkonadiCalendarCore.so.*.*
 %attr(755,root,root) %{_libdir}/qt6/plugins/akonadi_serializer_kcalcore.so
 %dir %{_libdir}/qt6/plugins/kf6/org.kde.kcalendarcore.calendars
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/org.kde.kcalendarcore.calendars/libakonadicalendarplugin.so
@@ -112,5 +114,8 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/KPim6/AkonadiCalendar
+%{_includedir}/KPim6/AkonadiCalendarCore
 %{_libdir}/cmake/KPim6AkonadiCalendar
+%{_libdir}/cmake/KPim6AkonadiCalendarCore
 %{_libdir}/libKPim6AkonadiCalendar.so
+%{_libdir}/libKPim6AkonadiCalendarCore.so
