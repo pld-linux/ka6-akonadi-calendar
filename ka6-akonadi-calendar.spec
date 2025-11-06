@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.2
+%define		kdeappsver	25.08.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		akonadi-calendar
 Summary:	Akonadi Calendar
 Name:		ka6-%{kaname}
-Version:	25.08.2
-Release:	2
+Version:	25.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	1ec74de0debad96870ab3a6f8a88f5a5
+# Source0-md5:	da08f07a12b47f9786405d8fe381843d
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= 5.11.1
@@ -98,13 +98,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 /etc/xdg/autostart/org.kde.kalendarac.desktop
 %attr(755,root,root) %{_bindir}/kalendarac
-%attr(755,root,root) %{_libdir}/libKPim6AkonadiCalendar.so.*.*
+%{_libdir}/libKPim6AkonadiCalendar.so.*.*
 %ghost %{_libdir}/libKPim6AkonadiCalendar.so.6
 %ghost %{_libdir}/libKPim6AkonadiCalendarCore.so.6
-%attr(755,root,root) %{_libdir}/libKPim6AkonadiCalendarCore.so.*.*
-%attr(755,root,root) %{_libdir}/qt6/plugins/akonadi_serializer_kcalcore.so
+%{_libdir}/libKPim6AkonadiCalendarCore.so.*.*
+%{_libdir}/qt6/plugins/akonadi_serializer_kcalcore.so
 %dir %{_libdir}/qt6/plugins/kf6/org.kde.kcalendarcore.calendars
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/org.kde.kcalendarcore.calendars/libakonadicalendarplugin.so
+%{_libdir}/qt6/plugins/kf6/org.kde.kcalendarcore.calendars/libakonadicalendarplugin.so
 %{_datadir}/akonadi/plugins/serializer/akonadi_serializer_kcalcore.desktop
 %{_datadir}/dbus-1/services/org.kde.kalendarac.service
 %{_datadir}/knotifications6/kalendarac.notifyrc
