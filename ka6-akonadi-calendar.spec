@@ -6,6 +6,7 @@
 %define		qtver		5.15.2
 %define		kaname		akonadi-calendar
 Summary:	Akonadi Calendar
+Summary(pl.UTF-8):	Kalendarz Akonadi
 Name:		ka6-%{kaname}
 Version:	26.04.1
 Release:	1
@@ -52,6 +53,12 @@ type-agnostic API of the Akonadi client libraries and the
 domain-specific KCalCore library. It provides jobs, models and other
 helpers to make working with events and calendars through Akonadi
 easier.
+
+%description -l pl.UTF-8
+Kalendarz Akonadi to biblioteka, która skutecznie łączy API niezależne
+od typu, biblioteki klienta Akonadi oraz bibliotekę KCalCore
+specyficzną dla domeny. Dostarcza jobs, modele i inne pomoce, żeby
+pracować ze zdarzeniami i kalendarzami Akonadi łatwiej.
 
 %package devel
 Summary:	Header files for %{kaname} development
